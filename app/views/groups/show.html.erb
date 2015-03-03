@@ -1,7 +1,7 @@
 <div class="col-md-12">
-  <div class="group">
-    <%= link_to("Edit", edit_group_path(@group), class: "btn btn-sm btn-primary pull-right") %>
-    <%= link_to("New Post", new_group_post_path(@group), class: "btn btn-sm btn-primary pull-right") %>
+  <div class="group pull-right">
+    <%= link_to("Edit", edit_group_path(@group), class: "btn btn-sm btn-primary") %>
+    <%= link_to("New Post", new_group_post_path(@group), class: "btn btn-sm btn-primary") %>
   </div>
   <h2><%= @group.title %></h2>
   <p><%= @group.description %></p>
@@ -13,6 +13,7 @@
         <td><%= post.content %></td>
         <td>
           <%= link_to("edit", edit_group_post_path(@group, post), class: "btn btn-sm btn-default") %>
+          <%= link_to("delete", group_post_path(@group, post), method: :delete, class: "btn btn-sm btn-default") %>
         </td>
       </tr>
     <% end %>
