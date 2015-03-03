@@ -26,10 +26,12 @@ body {
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+  margin-top: 10px;
 }
 
 .header {
   border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
 }
 
 .header h3 {
@@ -44,4 +46,8 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+}
+
+.group {
+  margin-top: 10px;
 }
