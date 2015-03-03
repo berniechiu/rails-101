@@ -1,0 +1,6 @@
+<div class="col-md-12">
+  <%= simple_form_for(@post, url: group_post_path(@group, @post), method: :patch) do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit", disable_with: "Submitting...", class: "btn btn-primary" %>
+  <% end %>
+</div>
