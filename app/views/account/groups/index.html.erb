@@ -18,7 +18,7 @@
         <td><%= group.title %></td>
         <td><%= group.description %></td>
         <td><%= group.posts.size %></td>
-        <td><%= group.updated_at %></td>
+        <td><%= group.updated_at.to_s(:long) %></td>
       </tr>
     <% end %>
     </tbody>
