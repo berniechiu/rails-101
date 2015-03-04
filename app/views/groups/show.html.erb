@@ -21,10 +21,7 @@
         <td><%= post.author.name %></td>
         <td><%= render_post_content(post) %></td>
         <td>
-        <% if current_user && post.editable_by?(current_user) %>
-          <%= link_to("edit", edit_group_post_path(@group, post), class: "btn btn-sm btn-default") %>
-          <%= link_to("delete", group_post_path(@group, post), method: :delete, class: "btn btn-sm btn-default") %>
-        <% end %>
+          <%= render "post_control", group: @group, post: post %>
         </td>
       </tr>
     <% end %>

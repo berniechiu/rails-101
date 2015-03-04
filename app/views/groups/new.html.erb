@@ -1,8 +1,5 @@
 <div class="col-md-12">
   <%= simple_form_for(@group, url: groups_path, method: :post) do |f| %>
-    <%= f.input(:title) %>
-    <%= f.input(:description) %>
-
-    <%= f.submit("Submit", disable_with: "Submitting...", class: "btn btn-primary") %>
+    <%= render "form", f: f %>
   <% end %>
 </div>
