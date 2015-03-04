@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :login_required, except: [:index, :show]
+  before_action :login_required, only: [:new, :create, :edit, :update,
+                                        :destroy, :join, :quit]
 
   def index
     @groups = Group.all
