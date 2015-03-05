@@ -1,5 +1,5 @@
 <div class="col-md-12">
   <%= simple_form_for(@group, url: group_path(@group), method: :patch) do |f| %>
-    <%= render "form" %>
+    <%= render "form", f: f %>
   <% end %>
 </div>
