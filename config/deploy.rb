@@ -30,12 +30,20 @@ set :log_level, :debug
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files,
-  %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{
+  config/database.yml
+  config/secrets.yml
+}
 
 # Default value for linked_dirs is []
-set :linked_dirs,
-  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{
+  log
+  tmp/pids
+  tmp/cache
+  tmp/sockets
+  vendor/bundle
+  public/system
+}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -44,8 +52,4 @@ set :linked_dirs,
 # set :keep_releases, 5
 
 after "deploy:publishing", "deploy:restart"
-namespace :deploy do
-  task :restart do
-    invoke "unicorn:reload"
-  end
-end
+after "deploy:restart", "unicorn:restart"
