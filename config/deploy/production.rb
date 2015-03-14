@@ -17,9 +17,12 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{apps@54.64.210.9}
-role :web, %w{apps@54.64.210.9}
-role :db,  %w{apps@54.64.210.9}
+set :user, 'apps'
+set :ssh_options, { port: 2222 }
+
+role :app, %w{apps@127.0.0.1}
+role :web, %w{apps@127.0.0.1}
+role :db,  %w{apps@127.0.0.1}
 
 
 
